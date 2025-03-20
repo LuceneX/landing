@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         try {
             // Fetch the HTML content
-            const response = await fetch(`public/views/${viewName}.html`);
+            const response = await fetch(`/public/views/${viewName}.html`);
             
             if (response.ok) {
                 const html = await response.text();
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } else {
                 // If view not found, load 404 page
-                const notFoundResponse = await fetch('public/views/404.html');
+                const notFoundResponse = await fetch('/public/views/404.html');
                 if (notFoundResponse.ok) {
                     const notFoundHtml = await notFoundResponse.text();
                     appDiv.innerHTML = extractBodyContent(notFoundHtml);
